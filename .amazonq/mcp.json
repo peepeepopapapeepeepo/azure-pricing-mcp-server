@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "prompt-server": {
+      "command": "uvx",
+      "args": ["prompt-mcp-server@latest"],
+      "env": {
+        "PROMPTS_PATH": "~/.aws/amazonq/prompts",
+        "MCP_DEBUG_LOGGING": "false",
+        "MCP_LOG_LEVEL": "DEBUG",
+        "MCP_LOG_FILE": "/tmp/mcp_server_debug.log"
+      },
+      "timeout": 30000
+    },
+    "awslabs.core-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.core-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "autoApprove": [],
+      "disabled": false
+    },
+    "awslabs.cost-analysis-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cost-analysis-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "isengard002-workload-dev-admins"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "awslabs.cost-explorer-mcp-server": {
+      "command": "uvx",
+      "args": ["awslabs.cost-explorer-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "isengard002-workload-dev-admins"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
